@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
-import 'home2.dart'; //durch 'home.dart' ersetzten wenn man den anderen Homescreen sehen will
+import 'home2.dart';
 
 class Login extends StatelessWidget{
+  
+  
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
 
       appBar: new AppBar(
-        title: new Text('Group7 login'),
+        title: new Text('Login'),
         backgroundColor: Colors.red[800],
 
       ),
       body: new Center(
         child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
           new Container(
           // margin: const EdgeInsets.all(10.0),
-          padding: const EdgeInsets.all(20.0),
+         // padding: const EdgeInsets.all(20.0),
+            padding: new EdgeInsets.symmetric(horizontal: 22.0 ,vertical: 10.0),
           alignment: Alignment.center,
           child: new Column(
            mainAxisSize: MainAxisSize.min,
@@ -44,14 +49,16 @@ class Login extends StatelessWidget{
             },
           ),
           new Container(
-            margin: const EdgeInsets.all(10.0),
+          //  margin: const EdgeInsets.all(10.0),
             padding: new EdgeInsets.symmetric(vertical: 10.0, horizontal: 60.0 ),
             child: new Row(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
 
               children: <Widget>[
                 new FlatButton(
                   child: new Text('Weiter ohne Login'),
+
                   textColor: Colors.black,
                   onPressed: (){
                     Navigator.push(
@@ -68,9 +75,13 @@ class Login extends StatelessWidget{
                         new MaterialPageRoute(builder: (context) => new Home()));
                   },
                 ),
+
+
               ],
             ),
-          ),   
+          ),
+            //dazu muss noch in der pubspec.yaml bei assets der pfad eingefügt werden und natürlich ein Ordner mit dem Bild erstellt werden 
+          new Image.asset("assets/images/G7-Weltkugel.png", fit: BoxFit.scaleDown,scale:  40.0, )
         ]
 
       ),
@@ -78,3 +89,5 @@ class Login extends StatelessWidget{
     );
   }
 }
+  
+
