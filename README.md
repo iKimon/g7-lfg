@@ -1,7 +1,8 @@
 
 In der AndroidManifest.xml muss für die LocationMap folgendes hinzugefügt werden:
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+```
+<code><uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /></code>
+```
 
 Bekannte Probleme:
 
