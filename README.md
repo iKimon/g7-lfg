@@ -4,5 +4,6 @@ In der AndroidManifest.xml muss für die LocationMap folgendes hinzugefügt werd
 
 
 Bekannte Probleme:
+
   Auf der Register Page bei Eingabe des Passworts oder der Email werden die Felder verdeckt
   
