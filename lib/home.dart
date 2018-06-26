@@ -4,6 +4,8 @@ import 'einladungen.dart';
 import 'chat.dart';
 import 'dart:async';
 import 'package:map_view/map_view.dart';
+import 'roundedButton.dart';
+import 'locationMap.dart';
 //import 'package:location/location.dart';
 
 var API_KEY = "AIzaSyC5d5Mc6xkc-uBGHPWKUxCJ4EmgHgi6fL0";
@@ -239,10 +241,21 @@ class _HomeBar extends State<Home>{
                                   style: new TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ),
+                              
                               new Container(
-                                padding: new EdgeInsets.only(top: 25.0),
-                                child: new Text(
-                                    "Camera Position: \n\nLat: ${cameraPosition.center.latitude}\n\nLng:${cameraPosition.center.longitude}\n\nZoom: ${cameraPosition.zoom}"),
+                                child: new RoundedButton(
+                                  buttonName: 'Neue Map',
+                                  height: 50.0,
+                                  bottomMargin: 10.0,
+                                  borderWidth: 2.0,
+                                  buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
+                                   onTap: () {
+                                    Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(builder: (context) => new LocationMap()),
+                                   );
+                                   },
+                                ),
                               ),
                             ],
                           )
