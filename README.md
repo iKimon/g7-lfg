@@ -1,8 +1,8 @@
-# lfg_ver2
 
-A new Flutter project.
+In der AndroidManifest.xml muss für die LocationMap folgendes hinzugefügt werden:
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+Bekannte Probleme:
+  Auf der Register Page bei Eingabe des Passworts oder der Email werden die Felder verdeckt
+  
