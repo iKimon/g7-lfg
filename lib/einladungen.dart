@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'gruppen.dart';
 import 'home.dart';
 
-class Einladung extends StatefulWidget {
-  @override
-  _Einladung createState() => new _Einladung();
-}
+class Einladung extends StatelessWidget{
+  final List<Gruppen> gruppen;
+  Einladung({Key key, @required this.gruppen}) : super(key: key);
 
-class _Einladung extends State<Einladung>{
+
   @override
   Widget build(BuildContext context) {
 
@@ -28,7 +28,7 @@ class _Einladung extends State<Einladung>{
                 ),
                 new Divider(height: 180.0, color: Colors.transparent,),
                 new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     new Icon(Icons.share),
                     new Icon(Icons.android),
@@ -36,24 +36,25 @@ class _Einladung extends State<Einladung>{
                   ],
                 ),
                 new Divider(height: 70.0, color: Colors.transparent,),
-               new Container(
-                 padding: const EdgeInsets.all(20.0),
-                 child:  new RaisedButton(
-                   padding: const EdgeInsets.all(10.0),
-                   onPressed: (){
-                     Navigator.push(context,
-                       new MaterialPageRoute(builder: (context) => new Home()),);
-                   },
-                   color: Colors.red[800],
-                   child: new ListTile(
-                     leading: new Icon(Icons.check, color: Colors.white,),
-                     title: new Text('Fertig!', style: new TextStyle(
-                         color: Colors.white
-                     ),
-                     ),
-                   ),
-                 ) ,
-               ),
+                new Container(
+                  padding: const EdgeInsets.all(20.0),
+                  child:  new RaisedButton(
+                    padding: const EdgeInsets.all(10.0),
+                    onPressed: (){
+                      Navigator.push(context,
+                        new MaterialPageRoute(builder: (context) =>  new Home(gruppen: gruppen,)),);
+                    },
+                    color: Colors.red[800],
+                    shape: RoundedRectangleBorder(side: BorderSide.none, borderRadius:  BorderRadius.circular(10.0)),
+                    child: new ListTile(
+                      leading: new Icon(Icons.check, color: Colors.white,),
+                      title: new Text('Fertig!', style: new TextStyle(
+                          color: Colors.white
+                      ),
+                      ),
+                    ),
+                  ) ,
+                ),
 
 
               ],
