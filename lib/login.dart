@@ -257,7 +257,7 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
                         height: 50.0,
                         bottomMargin: 10.0,
                         borderWidth: 2.0,
-                        buttonColor: const Color.fromRGBO(162, 32, 32, 0.5),
+                        buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
                       ),
                       new RoundedButton(
                         buttonName: 'Registrieren',
@@ -273,7 +273,7 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
                         height: 50.0,
                         bottomMargin: 10.0,
                         borderWidth: 2.0,
-                        buttonColor: const Color.fromRGBO(162, 32, 32, 0.5),
+                        buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
                       ),
                       new RoundedButton(
                         buttonName: 'Weiter ohne login',
