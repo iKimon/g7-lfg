@@ -4,6 +4,7 @@ import 'inputTextField.dart';
 import 'roundedButton.dart';
 import 'home.dart';
 import 'registerPage.dart';
+import 'gruppen.dart';
 
 
 
@@ -279,7 +280,9 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
                         onTap: () {
                           Navigator.push(
                             context,
-                              new MaterialPageRoute(builder: (context) => new Home()),
+                              new MaterialPageRoute(builder: (context) => new Home(gruppen: List.generate(
+                                2, (i) => Gruppen('Gruppe ', 'Mitglieder: 20', ),
+                              ),)),
                            );
                           Navigator.of(context).pushNamed('/a');
                         },
