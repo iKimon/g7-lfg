@@ -42,7 +42,6 @@ class InputField extends StatelessWidget {
               borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
               color: textFieldColor),
           child: new TextFormField(
-            
             style: textStyle,
             key: key,
             obscureText: obscureText,

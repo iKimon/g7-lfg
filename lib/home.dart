@@ -42,12 +42,14 @@ class _HomeBar extends State<Home>{
   Widget build(BuildContext context) {
 
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: new DefaultTabController(
           length: 4,
           child: new Scaffold(
             floatingActionButton: new FloatingActionButton(
               child: new Icon(Icons.add),
-              backgroundColor: Colors.red[800],
+              backgroundColor: Colors.black,
+              foregroundColor: Colors.white,
               onPressed: (){
                 Navigator.push(context, new MaterialPageRoute(builder: (context) => new GroupMaking(gruppen: gruppen,)));
               },
@@ -88,7 +90,7 @@ class _HomeBar extends State<Home>{
                                   title: Text(gruppen[index].name + '$index', style: new TextStyle(color: Colors.white),),
                                   subtitle: Text(gruppen[index].member,style: new TextStyle(color: Colors.white)),
                                   onTap: () {
-                                   Navigator.push(context, new MaterialPageRoute(builder: (context) => GroupScreen(gruppen: gruppen[index],)),
+                                   Navigator.push(context, new MaterialPageRoute(builder: (context) => GroupScreen(gruppe: gruppen[index],gruppen: gruppen,)),
                                   );
                                   },
                                 )

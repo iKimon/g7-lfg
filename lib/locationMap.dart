@@ -128,7 +128,7 @@ class _MyAppState extends State<LocationMap> {
     } else {
       widgets = [
         new Image.network(
-            "https://maps.googleapis.com/maps/api/staticmap?center=${_currentLocation["latitude"]},${_currentLocation["longitude"]}&zoom=18&size=640x400&key=AIzaSyC5d5Mc6xkc-uBGHPWKUxCJ4EmgHgi6fL0")
+            "https://maps.googleapis.com/maps/api/staticmap?center=${_currentLocation["latitude"]},${_currentLocation["longitude"]}&zoom=18&size=640x400&key=AIzaSyC5d5Mc6xkc-uBGHPWKUxCJ4EmgHgi6fL0" )
       ];
     }
 
@@ -142,15 +142,31 @@ class _MyAppState extends State<LocationMap> {
             ? 'Continuous location: $_currentLocation\n'
             : 'Error: $error\n')));
 
+    
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
         home: new Scaffold(
-            appBar: new AppBar(
-              title: new Text('Aktuelle Position'),
-            ),
-            body: new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: widgets,
-            )));
+            body: new ListView(
+              children: <Widget>[
+                new Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: widgets,
+                  /*children: <Widget>[
+                    new Container(
+                      child: widgets.elementAt(0),
+                    ),
+                    new Container(
+                      child: widgets.elementAt(1),
+                    ),
+                    new  Container(
+                      child: widgets.elementAt(2),
+                    )
+                  ],*/
+                )
+              ],
+            )
+        )
+    );
   }
 }
