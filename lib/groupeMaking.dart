@@ -157,7 +157,6 @@ class _GroupMaking extends State<GroupMaking>
                                   return null;
                                   }
                                   },
-                              onSaved: (val) => anzahl = val,
                             ),
                           ),
                         ],
