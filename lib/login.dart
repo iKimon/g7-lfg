@@ -260,44 +260,6 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
                          // buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
                           buttonColor: Colors.red[800],
                         ),
-<<<<<<< HEAD
-                      ],
-                    ),
-                  ),
-                  new Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      new RoundedButton(
-                        buttonName: 'Einloggen',
-                        onTap: _handleSubmitted,
-                        width: screenSize.width-50,
-                        height: 50.0,
-                        bottomMargin: 10.0,
-                        borderWidth: 2.0,
-                        buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
-                      ),
-                      new RoundedButton(
-                        buttonName: 'Registrieren',
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                              new MaterialPageRoute(builder: (context) => new RegisterPage()),
-                           );
-                          Navigator.of(context).pushNamed('/a');
-                        },
-                        highlightColor:const Color.fromRGBO(255, 255, 255, 0.1),
-                        width: screenSize.width-50,
-                        height: 50.0,
-                        bottomMargin: 10.0,
-                        borderWidth: 2.0,
-                        buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
-                      ),
-                      new RoundedButton(
-                        buttonName: 'Weiter ohne login',
-                        onTap: () {
-                          Navigator.push(
-                            context,
-=======
                         new RoundedButton(
                           buttonName: 'Registrieren',
                           onTap: () {
@@ -320,7 +282,6 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
                           onTap: () {
                             Navigator.push(
                               context,
->>>>>>> 1b97b40110476fc5020b6c0843a196d2ea4e2224
                               new MaterialPageRoute(builder: (context) => new Home(gruppen: List.generate(
                                 2, (i) => Gruppen('Gruppe ', 'Mitglieder: 20', ),
                               ),)),
