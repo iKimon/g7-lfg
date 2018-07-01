@@ -1,5 +1,6 @@
 import 'dart:async';
-
+import 'groupScreen.dart';
+import 'home.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 
@@ -14,6 +15,7 @@ import 'login.dart';
 void main() {
   runApp(new MaterialApp(
     home: new SplashScreen(),
+    debugShowCheckedModeBanner: false,
     routes: <String, WidgetBuilder>{
       '/HomeScreen': (BuildContext context) => new Login()
     },

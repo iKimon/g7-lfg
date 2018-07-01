@@ -33,7 +33,7 @@ class Login extends StatefulWidget {
 
 
 class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
- 
+
   bool _first=true;
 
 
@@ -54,11 +54,11 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
 
 
 
-   void showInSnackBar(String value) {
+  void showInSnackBar(String value) {
     _scaffoldKey.currentState.showSnackBar(new SnackBar(
         content: new Text(value)
     ));
-  } 
+  }
 
 
 /*   _ensureLoggedIn() async {
@@ -70,7 +70,7 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
   } */
   _handleSubmitted1() async {
     setState(() {
-        /* _isgooglesigincomplete = false; */
+      /* _isgooglesigincomplete = false; */
 
     });
 /*     await _ensureLoggedIn();
@@ -97,16 +97,16 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
     } */
   }
 
-   _handleSubmitted() async {
+  _handleSubmitted() async {
 
 
     final FormState form = _formKey.currentState;
     if (!form.validate()) {
       _autovalidate = true;
-       showInSnackBar('Bitte die nötigen Angaben machen.'); 
+      showInSnackBar('Bitte die nötigen Angaben machen.');
     } else {
 
- /*      form.save();
+      /*      form.save();
       final Map usrmap=await getUsers();
       usrmap.forEach(
         (k,v) async {
@@ -164,13 +164,13 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
       body: new SingleChildScrollView(
         controller: scrollController,
         child:new Container(
-        decoration: new BoxDecoration(
+         // decoration: new BoxDecoration(
 /*         image: new DecorationImage(
         image: new AssetImage('assets/images/G7-Weltkugel.png'),
           fit: BoxFit.fitHeight,
           alignment: Alignment.center,
         ), */
-        ),
+          //),
           child:new Column(
             children: <Widget>[
               new Container(
@@ -188,7 +188,7 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
                         style: new TextStyle(fontSize: 40.0),
                       ),
                     ),
-                    
+
                   ],
                 ),
               ),
@@ -200,50 +200,67 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
               ),
 
               new Container(
-              height: 5*screenSize.height /6,
-              child: new Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  
-                  new Form(
-                    key: _formKey,
-                    autovalidate: _autovalidate,
-                    child: new Column(
-                      children: <Widget>[
-                        new Container(
-                          child: new InputField(
-                            hintText: 'Email',
-                            obscureText: false,
-                            textInputType: TextInputType.text,
-                            textStyle: textStyle,
-                            hintStyle: textStyle,
-                            textFieldColor: textFieldColor,
-                            icon: Icons.mail_outline,
-                            iconColor: const Color.fromRGBO(255, 255, 255, 0.4),
-                            bottomMargin: 20.0,
-                            width: screenSize.width-50,
-                            validateFunction: _validateName,
-                            onSaved: (String email) {
-           //                   logindet.EmailId = email;
-                            }
+                height: 5*screenSize.height /6,
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+
+                    new Form(
+                      key: _formKey,
+                      autovalidate: _autovalidate,
+                      child: new Column(
+                        children: <Widget>[
+                          new Container(
+                            child: new InputField(
+                                hintText: 'Email',
+                                obscureText: false,
+                                textInputType: TextInputType.text,
+                                textStyle: textStyle,
+                                hintStyle: textStyle,
+                                textFieldColor: textFieldColor,
+                                icon: Icons.mail_outline,
+                                iconColor: const Color.fromRGBO(255, 255, 255, 0.4),
+                                bottomMargin: 20.0,
+                                width: screenSize.width-50,
+                                validateFunction: _validateName,
+                                onSaved: (String email) {
+                                  //                   logindet.EmailId = email;
+                                }
+                            ),
                           ),
-                        ),
-                        new InputField(
-                          hintText: 'Passwort',
-                          obscureText: true,
-                          textInputType: TextInputType.text,
-                          textStyle: textStyle,
-                          hintStyle: textStyle,
-                          textFieldColor: textFieldColor,
-                          icon: Icons.lock_outline,
-                          iconColor: Colors.white,
-                          bottomMargin: 20.0,
+                          new InputField(
+                              hintText: 'Passwort',
+                              obscureText: true,
+                              textInputType: TextInputType.text,
+                              textStyle: textStyle,
+                              hintStyle: textStyle,
+                              textFieldColor: textFieldColor,
+                              icon: Icons.lock_outline,
+                              iconColor: Colors.white,
+                              bottomMargin: 20.0,
+                              width: screenSize.width-50,
+                              onSaved: (String pass) {
+                                //                    logindet.password = pass;
+                              }
+                          ),
+                        ],
+                      ),
+                    ),
+                    new Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        new RoundedButton(
+                          buttonName: 'Einloggen',
+                          onTap: _handleSubmitted,
                           width: screenSize.width-50,
-                          onSaved: (String pass) {
-        //                    logindet.password = pass;
-                          }
+                          height: 50.0,
+                          bottomMargin: 10.0,
+                          borderWidth: 2.0,
+                         // buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
+                          buttonColor: Colors.red[800],
                         ),
+<<<<<<< HEAD
                       ],
                     ),
                   ),
@@ -280,23 +297,47 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
                         onTap: () {
                           Navigator.push(
                             context,
+=======
+                        new RoundedButton(
+                          buttonName: 'Registrieren',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              new MaterialPageRoute(builder: (context) => new RegisterPage()),
+                            );
+                            Navigator.of(context).pushNamed('/a');
+                          },
+                          highlightColor:const Color.fromRGBO(255, 255, 255, 0.1),
+                          width: screenSize.width-50,
+                          height: 50.0,
+                          bottomMargin: 10.0,
+                          borderWidth: 2.0,
+                         // buttonColor: const Color.fromRGBO(162, 32, 32, 0.8),
+                          buttonColor: Colors.red[800],
+                        ),
+                        new RoundedButton(
+                          buttonName: 'Weiter ohne login',
+                          onTap: () {
+                            Navigator.push(
+                              context,
+>>>>>>> 1b97b40110476fc5020b6c0843a196d2ea4e2224
                               new MaterialPageRoute(builder: (context) => new Home(gruppen: List.generate(
                                 2, (i) => Gruppen('Gruppe ', 'Mitglieder: 20', ),
                               ),)),
-                           );
-                          Navigator.of(context).pushNamed('/a');
-                        },
-                        highlightColor:const Color.fromRGBO(255, 255, 255, 0.1),
-                        width: screenSize.width-50,
-                        height: 50.0,
-                        bottomMargin: 10.0,
-                        borderWidth: 2.0,
-                        buttonColor: const Color.fromRGBO(162, 32, 32, 0.5),
-                      ),
+                            );
+                            Navigator.of(context).pushNamed('/a');
+                          },
+                          highlightColor:const Color.fromRGBO(255, 255, 255, 0.1),
+                          width: screenSize.width-50,
+                          height: 50.0,
+                          bottomMargin: 10.0,
+                          borderWidth: 2.0,
+                          buttonColor: const Color.fromRGBO(162, 32, 32, 0.5),
+                        ),
 //                      new AnimatedCrossFade(
 //                        duration: const Duration(seconds: 3),
 //                        firstChild:
-                      /*   (_isgooglesigincomplete
+                        /*   (_isgooglesigincomplete
                             ? new FloatingActionButton(
                           child: new Image.asset('graphics/google-logo.jpg'),
                           onPressed: _handleSubmitted1,
@@ -309,11 +350,11 @@ class LoginForm extends State<Login> with SingleTickerProviderStateMixin{
 //                        secondChild: _scaffoldkeyhomepage,
 //                        crossFadeState: _first ? CrossFadeState.showFirst : CrossFadeState.showSecond,
 //                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                ],
-              ),
+                  ],
+                ),
               ),
             ],
           ),
