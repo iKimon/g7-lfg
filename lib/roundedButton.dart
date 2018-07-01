@@ -14,7 +14,8 @@ class RoundedButton extends StatelessWidget {
   Color highlightColor;
 
   TextStyle textStyle = new TextStyle(
-      color: new Color.fromRGBO(255, 255, 255, 0.4),
+    //  color: new Color.fromRGBO(255, 255, 255, 0.4),
+      color: Colors.white,
       fontSize: 16.0,
       fontWeight: FontWeight.bold);
 
@@ -44,7 +45,7 @@ class RoundedButton extends StatelessWidget {
               color: buttonColor,
               borderRadius: const BorderRadius.all(const Radius.circular(10.0)),
               border: new Border.all(
-                  color: const Color.fromRGBO(221, 221, 221, 1.0),
+                 color: const Color.fromRGBO(221, 221, 221, 1.0),
                   width: borderWidth)),
           child: new Text(buttonName, style: textStyle),
         ),
@@ -63,7 +64,7 @@ class RoundedButton extends StatelessWidget {
             color: buttonColor,
             borderRadius: const BorderRadius.all(const Radius.circular(10.0)),
             border: new Border.all(
-              color: Colors.black,
+             color: Colors.black,
               width: 1.0,
             ),
           ),
